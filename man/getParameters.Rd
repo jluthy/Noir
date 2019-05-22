@@ -13,5 +13,5 @@ getParameters(character)
 Make call to API for Parameters Associated with Samples loaded into a workspace
 }
 \examples{
-\dontrun dfParameters <- getParameters(urlParams)
+\dontrun getParameters(urlParams)
 }

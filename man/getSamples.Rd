@@ -13,5 +13,5 @@ getSamples(character)
 Make call to API for Samples Names loaded into a workspace
 }
 \examples{
-\dontrun dfSamples <- getSamples(urlSams)
+\dontrun getSamples(urlSams)
 }

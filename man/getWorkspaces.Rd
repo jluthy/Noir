@@ -24,5 +24,5 @@ Make a call to API to find loaded workspaces.
 This code can be used to feed other plugins that would require this info.
 }
 \examples{
-\dontrun dfWorkspaces <- getWorkspaces(url)
+\dontrun getWorkspaces(url)
 }

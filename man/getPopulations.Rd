@@ -16,5 +16,5 @@ This will return Populations from a workspace
 Make a call to API to get Populations associated with Samples
 }
 \examples{
-\dontrun dfPopulations <- getPopulations(urlPops)
+\dontrun getPopulations(urlPops)
 }
