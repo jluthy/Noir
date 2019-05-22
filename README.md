@@ -1,2 +1,2 @@
 # Noir
-Code to read SeqGeq Workspace information when using FlowJo Server plugin
+Code to read FlowJo and SeqGeq Workspace information when using FlowJo Server plugin
