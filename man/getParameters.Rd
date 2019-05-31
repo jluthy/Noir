@@ -13,5 +13,8 @@ getParameters(character)
 Make call to API for Parameters Associated with Samples loaded into a workspace
 }
 \examples{
-\dontrun getParameters(urlParams)
+\dontrun{
+urlParams <- buildParamURL(url)
+getParameters(urlParams)
+}
 }

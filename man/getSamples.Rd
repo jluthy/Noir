@@ -13,5 +13,8 @@ getSamples(character)
 Make call to API for Samples Names loaded into a workspace
 }
 \examples{
-\dontrun getSamples(urlSams)
+\dontrun{
+urlSams <- buildSamURL("http://localhost:4567/api/v1/samples/all?workspaceid=")
+getSamples(urlSams)
+}
 }

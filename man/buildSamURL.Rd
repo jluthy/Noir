@@ -16,5 +16,8 @@ This will be new url to find samples.
 Set new url based on loaded workspace to find Samples loaded.
 }
 \examples{
-\dontrun urlSams <- buildSamURL()
+\dontrun{
+getWorkspaces(url)
+urlSams <- buildSamURL("http://localhost:4567/api/v1/samples/all?workspaceid=")
+} 
 }

@@ -2,11 +2,9 @@
 % Please edit documentation in R/Noir.R
 \name{getWorkspaces}
 \alias{getWorkspaces}
-\title{Noir}
-\source{
-This code could be made faster by not writing out the data frames and
-perhaps by streaming directly from the API.
-}
+\title{Noir
+
+Make a call to API to find loaded workspaces.}
 \usage{
 getWorkspaces(character)
 }
@@ -18,11 +16,18 @@ The Noir code will make call to API to gather and then create data frame of conn
 workspace names, samples, parameters, and populations. Otherwise returns error message.
 }
 \description{
+Noir
+
 Make a call to API to find loaded workspaces.
 }
 \note{
 This code can be used to feed other plugins that would require this info.
+This code could be modified to stream info directly from the API and not writing  
+out the data frames.
 }
 \examples{
-\dontrun getWorkspaces(url)
+\dontrun{
+url <- "http://localhost:4567/api/v1/workspaces/all"
+getWorkspaces(url)
+} 
 }

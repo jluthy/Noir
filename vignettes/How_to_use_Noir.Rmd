@@ -1,0 +1,117 @@
+---
+title: "How_to_use_Noir"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How_to_use_Noir}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  results = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Noir)
+```
+`Noir` allows you to pull information from a loaded FlowJo or SeqGeq workspace 
+when connected via the FlowJoServer API. The FJServer plugin will need to be
+started prior to starting this code. 
+
+
+# Gather Loaded Workspace Names
+## getWorkspaces()
+This will make a call to the API and gather the name of loaded workspace. 
+If no workspace is loaded it will return a waring message.
+If the FJServer is not running it will return an error message.
+You must open a previously saved workspace and begin the FlowJo Server plugin.
+
+```{r getWorkspaces, eval = TRUE}
+library(urltools)
+library(httr)
+library(jsonlite)
+
+url <- "http://localhost:4567/api/v1/workspaces/all"
+getWorkspaces(url)
+```
+
+# Create the Path To Samples From Loaded Workspace
+## buildSamURL()
+This will find the curretly loaded workspace and use that information to 
+build the URL to find the names of samples loaded into the workspace
+otherwise return an error message.
+```{r buildSamURL, eval = FALSE}
+library(urltools)
+library(httr)
+library(jsonlite)
+
+url <- "http://localhost:4567/api/v1/samples/all?workspaceid="
+urlSams <- buildSamURL(url)
+```
+
+# Gather Loaded Sample Names
+## getSamples()
+This will make a call to the API and gather the name of loaded samples. 
+If no samples are loaded it will return a waring message.
+```{r getSamples, eval = TRUE}
+library(urltools)
+library(httr)
+library(jsonlite)
+
+getSamples(urlSams)
+```
+
+# Create the Path To Parameters From Loaded Samples
+## buildParamURL()
+This will build the path to parameter based on currently loaded workspace
+and samples. Otherwise will return a warning.
+```{r buildParamURL, eval = FALSE}
+library(urltools)
+library(httr)
+library(jsonlite)
+
+url <- "http://localhost:4567/api/v1/parameters/all?workspaceid="
+urlParams <- buildParamURL(url)
+```
+
+# Gather Parameters Associated With Loaded Samples
+## getParameters()
+This will make a call to the API and gather the name of loaded parameters. 
+If no samples are loaded or no connection to API it will return a waring message.
+```{r getParameters, eval = TRUE}
+library(urltools)
+library(httr)
+library(jsonlite)
+
+getParameters(urlParams)
+```
+
+# Create the Path To Populations From Loaded Workspace
+## buildPopsURL()
+This will build the path to populations based on currently loaded workspace
+and samples. Otherwise will return a warning.
+```{r buildPopsURL, eval = FALSE}
+library(urltools)
+library(httr)
+library(jsonlite)
+
+url <- "http://localhost:4567/api/v1/populations/all?workspaceid="
+urlPops <- buildPopsURL(url)
+```
+
+# Gather Populations Associated With Loaded Samples
+## getPopulations
+This will make a call to the API and gather the name of sample populations. 
+If no samples are loaded or no connection to API it will return a waring message.
+```{r getPopulations, eval = TRUE}
+library(urltools)
+library(httr)
+library(jsonlite)
+
+getPopulations(urlPops)
+```
+

@@ -16,5 +16,8 @@ This function will return the url needed to find samples based on loaded workspa
 Set new url to find Parameters associated with Samples loaded into a workspace
 }
 \examples{
-\dontrun urlParams <- buildParamURL()
+\dontrun{
+url <- "http://localhost:4567/api/v1/parameters/all?workspaceid="
+urlParams <- buildParamURL(url)
+}
 }

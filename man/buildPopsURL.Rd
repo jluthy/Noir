@@ -16,5 +16,8 @@ This will return new url for finding populations
 Set new url to find Populations
 }
 \examples{
-\dontrun urlPops <- buildPopsURL()
+\dontrun{
+url <- "http://localhost:4567/api/v1/populations/all?workspaceid="
+urlPops <- buildPopsURL(url)
+} 
 }

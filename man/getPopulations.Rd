@@ -16,5 +16,8 @@ This will return Populations from a workspace
 Make a call to API to get Populations associated with Samples
 }
 \examples{
-\dontrun getPopulations(urlPops)
+\dontrun{
+urlPops <- buildPopsURL(url)
+getPopulations(urlPops)
+} 
 }
