@@ -11,14 +11,14 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET status_code
 #' @examples \dontrun{
-#' url <- "http://localhost:4567/api/v1/workspaces/all"
-#' getWorkspaces(url)
+#' urlWSP <- "http://localhost:4567/api/v1/workspaces/all"
+#' getWorkspaces(urlWSP)
 #' } 
 #' @export
 getWorkspaces <- function(character) {
   result <- tryCatch({
     response <-
-      GET(url = url )
+      GET(url = urlWSP )
     response_status <- response$status_code
     if (response_status  == 400) {
       warn_for_status("Error")
@@ -42,8 +42,8 @@ getWorkspaces <- function(character) {
   return(result)
 }
 #'
-# url <- "http://localhost:4567/api/v1/workspaces/all"
-# getWorkspaces(url)
+# urlWSP <- "http://localhost:4567/api/v1/workspaces/all"
+# getWorkspaces(urlWSP)
 #'
 #' Set new url based on loaded workspace to find Samples loaded.
 #' 
