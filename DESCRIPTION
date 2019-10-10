@@ -1,6 +1,6 @@
 Package: Noir
 Title: Reads FlowJo and SeqGeq Workspace To Gather Workspace Information
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: person("Josh", "Luthy", email = "jluthy123@gmail.com", role = c("aut", "cre"))
 Description: Reads SeqGeq workspace via Plugin API to gather information relating to the workspace.
 Depends: R (>= 3.5.0)
