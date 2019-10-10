@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -94,7 +95,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -311,12 +312,11 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <h2>getWorkspaces()</h2>
 <p>This will make a call to the API and gather the name of loaded workspace. If no workspace is loaded it will return a waring message. If the FJServer is not running it will return an error message. You must open a previously saved workspace and begin the FlowJo Server plugin.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(urltools)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; Warning: package 'urltools' was built under R version 3.5.2</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">library</span>(httr)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">library</span>(jsonlite)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">url &lt;-<span class="st"> &quot;http://localhost:4567/api/v1/workspaces/all&quot;</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">getWorkspaces</span>(url)</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(httr)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">library</span>(jsonlite)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">urlWSP &lt;-<span class="st"> &quot;http://localhost:4567/api/v1/workspaces/all&quot;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="kw">getWorkspaces</span>(urlWSP)</a></code></pre></div>
 </div>
 </div>
 <div id="create-the-path-to-samples-from-loaded-workspace" class="section level1">
@@ -395,6 +395,9 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </div>
 </div>
 
+
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

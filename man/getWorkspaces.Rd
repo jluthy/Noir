@@ -27,7 +27,7 @@ out the data frames.
 }
 \examples{
 \dontrun{
-url <- "http://localhost:4567/api/v1/workspaces/all"
-getWorkspaces(url)
+urlWSP <- "http://localhost:4567/api/v1/workspaces/all"
+getWorkspaces(urlWSP)
 } 
 }
